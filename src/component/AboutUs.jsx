@@ -1,5 +1,8 @@
 import React from 'react';
-import Carts from './Carts' 
+import Carts from './Carts'
+import AboutHeading from './styledComponent/AboutHeading';
+import AboutDot from './styledComponent/AboutDot';
+import AboutBigDot from './styledComponent/AboutBigDot';
 
 
 const AboutUs = () => {
@@ -8,6 +11,9 @@ const AboutUs = () => {
             <div className="about-header">
                 <h2 className="about-header_title">About Us</h2>
                 <p className="about-header_text">Independence, informed debate, policy influence and reach.</p>
+                <div className="border1"></div>
+                <div className="border2"></div>
+                <AboutHeading />
             </div>
             <div className="about-des">
                 <p className="about-des_par">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis molestie est a ultrices. Proin elementum, lorem
@@ -37,6 +43,8 @@ const AboutUs = () => {
                 </p>
                
             </div>
+            <AboutDot />
+            <AboutBigDot />
             <Carts/>
         </section>
     )

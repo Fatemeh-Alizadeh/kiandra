@@ -43,61 +43,14 @@ p {
 }
 button {
   text-transform: uppercase;
+  transition: transform ease-in 0.2s;
+}
+button:hover {
+  transform: scale(0.75);
 }
 
 body {
   font-family: var(--ff);
-}
-
-/* ...............DotDesign............ */
-
-.style {
-  width: 127px;
-  height: 98px;
-  display: flex;
-  gap: 18px;
-  padding: 1rem;
-}
-.style-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-}
-.dark1 {
-  background-color: var(--clr-dark);
-}
-.dark2 {
-  background: rgba(37, 41, 50, 0.9);
-}
-.dark3 {
-  background: rgba(37, 41, 50, 0.8);
-}
-.dark4 {
-  background: rgba(37, 41, 50, 0.7);
-}
-.dark5 {
-  background: rgba(37, 41, 50, 0.6);
-}
-.dark6 {
-  background: rgba(37, 41, 50, 0.5);
-}
-.dark7 {
-  background: rgba(37, 41, 50, 0.4);
-}
-.dark8 {
-  background: rgba(37, 41, 50, 0.3);
-}
-.dark9 {
-  background: rgba(37, 41, 50, 0.2);
-}
-.dark10 {
-  background: rgba(37, 41, 50, 0.1);
-}
-
-.style-column {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
 }
 
 /* ...............NAVBAR............ */
@@ -131,6 +84,10 @@ nav {
   width: 99.27px;
   height: 22.13px;
 }
+.nav-top,
+.nav-buttom {
+  display: none;
+}
 /* ..........MENU ICON.......*/
 .menu-icon_1,
 .menu-icon_2,
@@ -152,15 +109,86 @@ nav {
   width: 16px;
   top: 16px;
 }
+@media only screen and (min-width: 1200px) {
+  .menu-icon_1,
+  .menu-icon_2,
+  .menu-icon_3 {
+    display: none;
+  }
+  .nav-top-list {
+    width: 26.5%;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid red;
+  }
+  .nav-top,
+  .nav-buttom {
+    display: flex;
+    padding: 0.5rem;
+  }
+  .nav-top-list {
+    display: flex;
+    list-style: none;
+    flex-direction: row-reverse;
+    gap: 3rem;
+    position: absolute;
+    right: 1rem;
+  }
+  .color-nav {
+    width: 135px;
+    height: 33px;
+    background-color: rgba(165, 187, 41, 1);
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    right: 350px;
+  }
+  .search-icon {
+    position: absolute;
+    right: 30px;
+    font-size: 1rem;
+  }
+  .logo-img {
+    width: 70px;
+    height: 15px;
+    position: absolute;
+    left: 20px;
+  }
+  .nav-buttom {
+    font-size: 10px;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-bottom-list {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  nav {
+    border-bottom: 2px solid red;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+}
 
 /* ...............ABOUT SECTION............ */
 
 .about-header {
-  height: 189px;
+  height: 275px;
   background-color: var(--clr-dark);
   color: var(--clr-white);
   padding: 1.25rem;
   margin-bottom: 2.125rem;
+  position: relative;
 }
 .about-header_title {
   margin-bottom: 1.5rem;
@@ -174,6 +202,9 @@ nav {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 25px;
+}
+.about-heading-dot {
+  display: none;
 }
 
 .about-des {
@@ -242,13 +273,52 @@ nav {
   line-height: 19.5px;
   margin-top: 1.5rem;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .about-header_text {
     width: 40%;
+  }
+  .border1 {
+    width: 133.41px;
+    height: 208px;
+    position: absolute;
+    border: 1px solid white;
+    bottom: 0;
+    right: 0;
+  }
+  .border2 {
+    width: 156px;
+    height: 245px;
+    border: 1px solid white;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .about-heading-dot {
+    display: inline;
+    width: 175px;
+    height: 98px;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
   }
   .about-des {
     width: 60%;
     margin: 1rem auto;
+  }
+  .about-dot {
+    display: none;
+  }
+  .bigRow {
+    width: 920px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 18px;
+  }
+  .aboutBigDot {
+    display: inline;
+    width: 900px;
+    height: 98px;
   }
   .cart {
     width: 354px;
@@ -257,6 +327,26 @@ nav {
   .carts-section {
     overflow-x: hidden;
   }
+}
+/* ...............DotDesign............ */
+
+.styleRow {
+  width: 127px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 18px;
+}
+.aboutBigDot {
+  display: none;
+}
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.about-dot {
+  margin: 3rem;
 }
 
 /* ...............NETWORK............ */
@@ -303,7 +393,7 @@ nav {
   font-weight: 700;
   line-height: 20.8px;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .network-container {
     display: flex;
     justify-content: space-between;
@@ -347,7 +437,7 @@ nav {
 .accordion-info {
   padding: 1rem;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .accordion-container {
     width: 954px;
   }
@@ -418,13 +508,21 @@ nav {
   bottom: 0;
   right: 0;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .tiles-container {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
     padding: 4rem;
   }
+}
+
+/* ...............DotDesign............ */
+
+.tile-dot {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
 }
 
 /* ...............FOOTER............ */
@@ -532,6 +630,7 @@ input[type="checkbox"]:checked + .checkbox-label::after {
 }
 .twitter-feed {
   margin-bottom: 6.5rem;
+  margin-top: 3rem;
 }
 .twitter-logo {
   display: flex;
@@ -562,7 +661,7 @@ input[type="checkbox"]:checked + .checkbox-label::after {
   line-height: 17.6px;
   margin-top: 1rem;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .footer-contact {
     display: flex;
     justify-content: space-around;
